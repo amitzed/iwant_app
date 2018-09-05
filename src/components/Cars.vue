@@ -8,7 +8,9 @@
       <form @submit.prevent="addCar">
         <input type="text" placeholder="Type in Car Name" v-model="car" v-validate="'min:3'" name="car">
 
-        <p class="alert" v-if="errors.has('car')">{{ errors.first('car') }}</p>
+        <transition name="alert-in" enter-active-class="animated rubberBand" leave-active-class="animated rotateOut">
+          <p class="alert" v-if="errors.has('car')">{{ errors.first('car') }}</p>
+        </transition>
 
       </form>
 
@@ -40,8 +42,14 @@ export default {
   },
   methods: {
     addCar() {
-      this.cars.push({car: this.car})
-      this.car = '';
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.cars.push({car: this.car})
+          this.car = '';
+        } else {
+          console.log('Invalid Entry');
+        }
+      })
     }
   }
 }
@@ -49,6 +57,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import "https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css";
 
 .listName {
   background: #12403E;
@@ -97,6 +106,13 @@ ul {
   padding: 0;
   margin: 0;
   padding-top: 5px;
+}
+
+.alert-in-enter-active {
+
+}
+.alert-in-leave-active {
+
 }
 
 
