@@ -1,8 +1,15 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/iwlogo.png">
-    <Cars />
+    <!-- <Cars /> -->
+    <nav>
+      <router-link to="/">Cars</router-link>
+      <router-link to="/watches">Watches</router-link>
+      <router-link to="/software">Software</router-link>
+      <router-link to="/etc">Etc</router-link>
+    </nav>
 
+    <router-view />
   </div>
 </template>
 
@@ -16,15 +23,17 @@ export default {
   }
 }
 </script>
-@import url('https://fonts.googleapis.com/css?family=Rubik|VT323|Yatra+One" rel="stylesheet')
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Rubik|VT323|Yatra+One" rel="stylesheet');
+
 html {
 margin: 35px;
 height: 100%;
 }
 
 body {
+  padding: 50px;
   background-color: #F2E4B1;
   /* font-family: 'VT323', monospace; */
   /* font-family: 'Rubik', sans-serif;

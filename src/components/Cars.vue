@@ -2,6 +2,7 @@
   <div class="hello">
     <div class="listName">
 
+<!-- <img src="/assets/car.png"> -->
 
       <p>List The Cars You Want</p>
 
@@ -71,7 +72,7 @@ export default {
 }
 
 p {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'VT323', monospace;
   font-size: 1.4em;
   padding-bottom: 10px;
   box-shadow: 25px 10px #DF6127, -25px -15px #58B7B8;
