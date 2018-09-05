@@ -77,6 +77,7 @@
     padding-bottom: 10px;
     box-shadow: 25px 10px #DF6127, -25px -15px #58B7B8;
     padding-top: 20px;
+    border-radius: 20%;
   }
 
   input {
