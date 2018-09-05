@@ -4,6 +4,14 @@
 
 
       <p>List The Cars You Want</p>
+
+      <form @submit.prevent="addCar">
+        <input type="text" placeholder="Type in Car Name" v-model="car" v-validate="'min:3'" name="car">
+
+        <p class="alert" v-if="errors.has('car')">{{ errors.first('car') }}</p>
+
+      </form>
+
       <ul>
         <li v-for="(data, index) in cars" :key='index'>
           {{ data.car }}
@@ -29,8 +37,13 @@ export default {
         { "car": "Mercedes-Benz AMG GT"}
       ]
     }
+  },
+  methods: {
+    addCar() {
+      this.cars.push({car: this.car})
+      this.car = '';
+    }
   }
-
 }
 </script>
 
@@ -50,6 +63,24 @@ p {
   padding-top: 20px;
 }
 
+input {
+  font-family: 'VT323', monospace;
+  color: #12403E;
+  font-size: 1.5em;
+  width: calc(100% - 33px);
+  background: linear-gradient(90deg, #F8CE3D, #58B7B8, #F2E4B1);
+  border: 0;
+  padding: 15px;
+}
+
+.alert {
+  font-family: 'VT323', monospace;
+  background-color: #F8CE3D;
+  padding: 3px;
+  margin: -20px;
+  display: inline-block;
+}
+
 ul, li {
   font-family: 'VT323', monospace;
   font-size: 1.1em;
@@ -65,10 +96,15 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  padding-top: 5px;
 }
 
-/* input {
-  width: calc(100% - 40px);
-} */
+
+/* Animations */
+@keyframes background-move {
+   0%{background-position:0% 50%}
+   50%{background-position:100% 50%}
+   100%{background-position:0% 50%}
+ }
 
 </style>

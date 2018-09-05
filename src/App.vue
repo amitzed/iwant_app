@@ -19,6 +19,10 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Rubik|VT323|Yatra+One" rel="stylesheet')
 
 <style>
+html {
+margin: 35px;
+height: 100%;
+}
 
 body {
   background-color: #F2E4B1;
@@ -31,10 +35,6 @@ body {
   justify-items: center;
 }
 
-html {
-margin: 35px;
-height: 100%;
-}
 
 img {
   background: linear-gradient(270deg, #58B7B8, #DF6127, #12403E);
