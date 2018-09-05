@@ -1,12 +1,14 @@
 {
   "name": "iwant_app",
   "version": "0.1.0",
+  "description": "A Vue.js project",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "start": "node server.js"
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "start": "node server.js",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "express": "^4.16.3",
