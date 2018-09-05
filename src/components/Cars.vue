@@ -70,6 +70,7 @@ export default {
   background: #12403E;
   color: #F8CE3D;
   font-weight: bold;
+  border-radius: 20%;
 }
 
 p {

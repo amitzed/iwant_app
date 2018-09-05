@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/iwlogo.png">
-    <!-- <Cars /> -->
+
     <nav class="jumbotron">
       <router-link to="/">Cars</router-link>
       <router-link to="/watches">Watches</router-link>
       <router-link to="/software">Software</router-link>
       <router-link to="/etc">Etc</router-link>
     </nav>
+    <br/>
+
+    <img alt="Vue logo" src="./assets/iwlogo.png">
+    <!-- <Cars /> -->
+
 
     <router-view />
   </div>
@@ -34,7 +38,8 @@ height: 100%;
 
 body {
   padding: 50px;
-  background-color: #F2E4B1;
+  /* background-color: #F2E4B1; */
+  background: linear-gradient(270deg, #58B7B8, #F2E4B1, #12403E);
   /* font-family: 'VT323', monospace; */
   /* font-family: 'Rubik', sans-serif;
   font-family: 'Yatra One', cursive; */
@@ -78,9 +83,9 @@ nav a {
   box-shadow: 5px 2px 40px #DF6127, -5px -2px 40px #12403E;
   padding: 20px;
   background-size: 400% 400%;
-  -webkit-animation: background-move 30s ease infinite;
-  -moz-animation: background-move 30s ease infinite;
-  animation: background-move 30s ease infinite;
+  -webkit-animation: background-move 20s ease infinite;
+  -moz-animation: background-move 20s ease infinite;
+  animation: background-move 20s ease infinite;
   border-radius: 5%;
 }
 
