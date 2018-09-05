@@ -11,13 +11,13 @@
         <transition name="alert-in" enter-active-class="animated rubberBand" leave-active-class="animated rotateOut">
           <p class="alert" v-if="errors.has('car')">{{ errors.first('car') }}</p>
         </transition>
-
       </form>
 
       <ul>
-        <transition-group name="list" enter-active-class="animated slideInLeft" leave-active-class="animated bounceOutDown">
+        <transition-group name="list" enter-active-class="animated slideInLeft" leave-active-class="animated fadeOutUpBig">
           <li v-for="(data, index) in cars" :key='index'>
             {{ data.car }}
+            <i class="fa fa-trash" v-on:click="remove(index)"></i>
           </li>
         </transition-group>
       </ul>
@@ -49,9 +49,12 @@ export default {
           this.cars.push({car: this.car})
           this.car = '';
         } else {
-          console.log('Invalid Entry');
+          // console.log('Invalid Entry');
         }
       })
+    },
+    remove(id) {
+      this.cars.splice(id,1);
     }
   }
 }
@@ -59,6 +62,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css";
 
 .listName {
@@ -82,6 +86,11 @@ input {
   background: linear-gradient(90deg, #F8CE3D, #58B7B8, #F2E4B1);
   border: 0;
   padding: 15px;
+}
+
+i {
+  cursor: pointer;
+  float: left;
 }
 
 .alert {
@@ -110,13 +119,6 @@ ul {
   padding-top: 5px;
 }
 
-/* .alert-in-enter-active {
-  animation: pop-in-out .5s;
-}
-.alert-in-leave-active {
-  animation: pop-in-out .5s reverse;
-} */
-
 
 /* Animations */
 @keyframes background-move {
@@ -124,10 +126,6 @@ ul {
    50%{background-position:100% 50%}
    100%{background-position:0% 50%}
  }
- /* @keyframes pop-in-out {
-   0% {transform: scale(0);}
-   50% {transform: scale(1.5);}
-   100% {transform: scale(1);}
- } */
+
 
 </style>
