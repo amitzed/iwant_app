@@ -15,9 +15,11 @@
       </form>
 
       <ul>
-        <li v-for="(data, index) in cars" :key='index'>
-          {{ data.car }}
-        </li>
+        <transition-group name="list" enter-active-class="animated slideInLeft" leave-active-class="animated bounceOutDown">
+          <li v-for="(data, index) in cars" :key='index'>
+            {{ data.car }}
+          </li>
+        </transition-group>
       </ul>
       <!-- <p v-if="cars.length >= 1">You entered more than one car</p>
       <p v-else="cars.length >= 1">You entered less than one car</p> -->
@@ -108,12 +110,12 @@ ul {
   padding-top: 5px;
 }
 
-.alert-in-enter-active {
-
+/* .alert-in-enter-active {
+  animation: pop-in-out .5s;
 }
 .alert-in-leave-active {
-
-}
+  animation: pop-in-out .5s reverse;
+} */
 
 
 /* Animations */
@@ -122,5 +124,10 @@ ul {
    50%{background-position:100% 50%}
    100%{background-position:0% 50%}
  }
+ /* @keyframes pop-in-out {
+   0% {transform: scale(0);}
+   50% {transform: scale(1.5);}
+   100% {transform: scale(1);}
+ } */
 
 </style>
