@@ -69,6 +69,7 @@ export default {
 .listName {
   background: #12403E;
   color: #F8CE3D;
+  font-weight: bold;
 }
 
 p {

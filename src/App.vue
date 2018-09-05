@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/iwlogo.png">
     <!-- <Cars /> -->
-    <nav>
+    <nav class="jumbotron">
       <router-link to="/">Cars</router-link>
       <router-link to="/watches">Watches</router-link>
       <router-link to="/software">Software</router-link>
@@ -60,6 +60,28 @@ img {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+nav a {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  background: #12403E;
+  padding: 10px;
+  text-decoration: none;
+  color: #F8CE3D;
+  margin-right: 22px;
+  border-radius: 20%;
+}
+
+.jumbotron {
+  background: linear-gradient(90deg, #12403E, #58B7B8, #F8CE3D);
+  box-shadow: 5px 2px 40px #DF6127, -5px -2px 40px #12403E;
+  padding: 20px;
+  background-size: 400% 400%;
+  -webkit-animation: background-move 30s ease infinite;
+  -moz-animation: background-move 30s ease infinite;
+  animation: background-move 30s ease infinite;
+  border-radius: 5%;
 }
 
 
